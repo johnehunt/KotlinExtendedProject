@@ -26,8 +26,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            app:tabMode="fixed"
-            app:tabGravity="fill" />
+            android:contextClickable="false"
+            app:tabBackground="@color/purple_200"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#9C27B0"
+            app:tabMode="fixed" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
