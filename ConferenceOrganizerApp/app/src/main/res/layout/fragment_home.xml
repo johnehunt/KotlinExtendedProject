@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EFEBEB"
-        android:text="Welcome to the conference organizer application. You can use this app to select which sessions you want ot attend at todays specialist conference"
+        android:text="@string/welcome_msg"
         android:padding="10dp"
         android:textSize="24sp" />
 

@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jjh.android.organizer.R
 
-class SlideshowFragment : Fragment() {
+class PlannerFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+    private lateinit var plannerViewModel: PlannerViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-                ViewModelProvider(this).get(SlideshowViewModel::class.java)
+        plannerViewModel =
+                ViewModelProvider(this).get(PlannerViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_planner, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        plannerViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

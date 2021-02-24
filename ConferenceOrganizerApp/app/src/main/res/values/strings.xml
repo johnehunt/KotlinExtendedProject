@@ -10,5 +10,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Sessions</string>
     <string name="menu_slideshow">Planner</string>
+    <string name="welcome_msg">Welcome to the conference organizer application. You can use this app to select which sessions you want to attend at todays\' specialist conference</string>
 
 </resources>

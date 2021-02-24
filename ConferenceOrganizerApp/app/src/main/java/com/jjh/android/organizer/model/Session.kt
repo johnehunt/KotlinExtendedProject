@@ -13,7 +13,8 @@ data class Session(@PrimaryKey(autoGenerate = true) val id: Int,
 
 @Entity(tableName = "tracks")
 data class Track(@PrimaryKey(autoGenerate = true) val id: Int,
-                 val name: String)
+                 val name: String,
+                 val room: String)
 
 data class TrackWithSessions(
     @Embedded val track: Track,

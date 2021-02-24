@@ -35,7 +35,7 @@ class TrackDaoTest {
     @Test
     @Throws(Exception::class)
     fun addTrackTest() {
-        val track = Track(1, "Primary Track")
+        val track = Track(1, "Primary Track", "A12")
         trackDao!!.insert(track)
         val foundTrack = trackDao?.findById(1)
         foundTrack?.apply {
@@ -47,8 +47,8 @@ class TrackDaoTest {
     @Test
     @Throws(Exception::class)
     fun addAllTracksTest() {
-        val track2 = Track(2, "Secondary Track")
-        val track3 = Track(3, "Tertiary Track")
+        val track2 = Track(2, "Secondary Track", "B4")
+        val track3 = Track(3, "Tertiary Track", "C56")
 
         trackDao!!.insertAll(track2, track3)
 

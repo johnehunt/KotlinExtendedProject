@@ -29,7 +29,7 @@ class TabPagerAdapter(private val trackViewModel: TrackViewModel,
 
     override fun getPageTitle(position: Int): CharSequence {
         Log.d(TAG, "getPageTitle($position)")
-        return trackViewModel.getTrackName(position)
+        return "${trackViewModel.getTrackName(position)} - ${trackViewModel.getTrackRoom(position)}"
 
     }
 

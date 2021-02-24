@@ -40,5 +40,7 @@ class TrackViewModel : ViewModel() {
 
     fun getTrackSessions(position: Int) = get(position).sessions
 
+    fun getTrackRoom(position: Int): String = get(position).track.room
+
 
 }

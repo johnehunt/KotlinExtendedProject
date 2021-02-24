@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.jjh.android.organizer.ui.planner.SlideshowFragment"
+        android:name="com.jjh.android.organizer.ui.planner.PlannerFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_planner" />
 </navigation>
