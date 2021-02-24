@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.sessions
+package com.jjh.android.organizer.ui.planner
 
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,9 +12,10 @@ class TabPagerAdapter(private val trackViewModel: TrackViewModel,
         private const val TAG = "TabPagerAdapter"
     }
 
-    private var tabFragments: MutableList<TabFragment> = mutableListOf<TabFragment>()
+    private var tabFragments: MutableList<TabFragment> = mutableListOf()
 
     init {
+        Log.d(TAG, "<init>")
         val tracksWithSessions = trackViewModel.tracksWithSessions
         tracksWithSessions.forEach{
             val tabFragment = TabFragment(it)
@@ -30,11 +31,10 @@ class TabPagerAdapter(private val trackViewModel: TrackViewModel,
     override fun getPageTitle(position: Int): CharSequence {
         Log.d(TAG, "getPageTitle($position)")
         return "${trackViewModel.getTrackName(position)} - ${trackViewModel.getTrackRoom(position)}"
-
     }
 
     override fun getCount(): Int {
-        Log.d(TAG, "getCount()")
+        Log.d(TAG, "getCount() - ${trackViewModel.size}")
         return trackViewModel.size
     }
 }

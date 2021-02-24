@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.sessions
+package com.jjh.android.organizer.ui.planner
 
 import android.content.Context
 import android.util.Log
@@ -15,7 +15,7 @@ class SessionAdapter(val context: Context,
                      private val sessions: List<Session>) : RecyclerView.Adapter<SessionViewHolder>() {
 
     companion object {
-        private const val TAG = "HeroAdapter"
+        private const val TAG = "SessionAdapter"
     }
 
     /**

@@ -36,7 +36,7 @@ class TracksWithSessionsDaoTest {
     @Throws(Exception::class)
     fun findTracksWithSessionsTest() {
         val tracksWithSessions = tracksWithSessionsDao?.getTracksWithSessions()
-        Log.d(TAG, "findAlltracksTest - $tracksWithSessions")
+        Log.d(TAG, "findAllTracksTest - $tracksWithSessions")
         assertEquals(3, tracksWithSessions?.size)
     }
 

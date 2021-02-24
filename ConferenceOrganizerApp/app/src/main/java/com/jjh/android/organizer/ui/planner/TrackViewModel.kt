@@ -1,22 +1,21 @@
-package com.jjh.android.organizer.ui.sessions
+package com.jjh.android.organizer.ui.planner
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.jjh.android.organizer.db.DefaultSchedulerProvider
 import com.jjh.android.organizer.db.OrganizerRepository
-import com.jjh.android.organizer.db.TracksWithSessionsDao
 import com.jjh.android.organizer.model.TrackWithSessions
 import io.reactivex.rxjava3.core.Observable
 
 class TrackViewModel : ViewModel() {
 
     companion object {
-        private const val TAG = "SessionViewModel"
+        private const val TAG = "TrackViewModel"
     }
 
     lateinit var repository: OrganizerRepository
 
-    var tracksWithSessions: List<TrackWithSessions> = listOf<TrackWithSessions>()
+    var tracksWithSessions: List<TrackWithSessions> = listOf()
 
     fun refresh(): Observable<List<TrackWithSessions>> {
         Log.d(TAG, "refresh()")
@@ -31,6 +30,7 @@ class TrackViewModel : ViewModel() {
         get() = tracksWithSessions.size
 
     fun get(position: Int): TrackWithSessions {
+        Log.d(TAG, "get($position)")
         return tracksWithSessions[position]
     }
 

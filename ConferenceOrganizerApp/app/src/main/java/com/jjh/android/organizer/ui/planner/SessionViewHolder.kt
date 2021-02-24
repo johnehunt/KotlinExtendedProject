@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.sessions
+package com.jjh.android.organizer.ui.planner
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ class SessionViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.session_list_layout, parent, false)) {
 
     companion object {
-        private const val TAG = "PlayViewHolder"
+        private const val TAG = "SessionViewHolder"
     }
 
     private val sessionId = itemView.findViewById<TextView>(R.id.sessionId)

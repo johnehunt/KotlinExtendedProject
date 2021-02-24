@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.planner
+package com.jjh.android.organizer.ui.tracks
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jjh.android.organizer.R
 
-class PlannerFragment : Fragment() {
+class TrackFragment : Fragment() {
 
-    private lateinit var plannerViewModel: PlannerViewModel
+    private lateinit var trackViewModel: TrackViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        plannerViewModel =
-                ViewModelProvider(this).get(PlannerViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_planner, container, false)
+        trackViewModel =
+                ViewModelProvider(this).get(TrackViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_tracks, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
-        plannerViewModel.text.observe(viewLifecycleOwner, Observer {
+        trackViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

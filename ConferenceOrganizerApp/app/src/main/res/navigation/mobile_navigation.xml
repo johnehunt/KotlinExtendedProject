@@ -12,14 +12,22 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.jjh.android.organizer.ui.sessions.TrackFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_sessions" />
+        android:id="@+id/nav_planner"
+        android:name="com.jjh.android.organizer.ui.planner.TrackFragment"
+        android:label="@string/menu_planner"
+        tools:layout="@layout/fragment_planner" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.jjh.android.organizer.ui.planner.PlannerFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_planner" />
+        android:id="@+id/nav_tracks"
+        android:name="com.jjh.android.organizer.ui.tracks.TrackFragment"
+        android:label="@string/menu_tracks"
+        tools:layout="@layout/fragment_tracks" />
+
+    <fragment
+        android:id="@+id/nav_sessions"
+        android:name="com.jjh.android.organizer.ui.sessions.SessionFragment"
+        android:label="@string/menu_sessions"
+        tools:layout="@layout/fragment_sessions" />
+
+
 </navigation>

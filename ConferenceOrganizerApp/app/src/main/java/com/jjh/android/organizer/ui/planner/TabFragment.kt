@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.sessions
+package com.jjh.android.organizer.ui.planner
 
 import android.os.Bundle
 import android.util.Log

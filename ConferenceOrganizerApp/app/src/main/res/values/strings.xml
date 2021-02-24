@@ -8,8 +8,9 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Sessions</string>
-    <string name="menu_slideshow">Planner</string>
-    <string name="welcome_msg">Welcome to the conference organizer application. You can use this app to select which sessions you want to attend at todays\' specialist conference</string>
+    <string name="menu_planner">Planner</string>
+    <string name="menu_tracks">Tracks</string>
+    <string name="menu_sessions">Sessions</string>
+    <string name="welcome_msg">Welcome to the conference organizer application. This app allows tracks and sessions to be created and the resulting plan viewed.</string>
 
 </resources>
