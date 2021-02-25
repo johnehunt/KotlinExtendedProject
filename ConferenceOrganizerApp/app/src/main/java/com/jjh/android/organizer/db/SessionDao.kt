@@ -30,4 +30,10 @@ interface SessionDao {
     @Delete
     fun deleteAll(vararg sessions: Session): Int
 
+    @Query("DELETE FROM sessions")
+    fun deleteAll(): Int
+
+    @Query("SELECT COUNT(id) FROM sessions")
+    fun getRowCount(): Int
+
 }

@@ -46,5 +46,26 @@ class TrackDaoTest {
             Assert.assertEquals(3, size)
         }
     }
+
+    @Test
+    fun getRowCountTest() {
+        val result = trackDao!!.getRowCount()
+        Assert.assertEquals(0, result)
+    }
+
+    fun deleteAllTest() {
+        trackDao?.deleteAll()
+    }
+
+    fun deleteTrack() {
+        trackDao?.deleteById(1)
+    }
+
+    fun deleteTracks() {
+        val track1 = Track(1, "Primary Track", "A12")
+        val track2 = Track(2, "Secondary Track", "B4")
+        val track3 = Track(3, "Tertiary Track", "C56")
+        trackDao?.deleteAll(track1, track2, track3)
+    }
     
 }

@@ -1,7 +1,9 @@
 package com.jjh.android.organizer.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.jjh.android.organizer.model.Track
+
 
 @Dao
 interface TrackDao {
@@ -29,5 +31,11 @@ interface TrackDao {
 
     @Delete
     fun deleteAll(vararg tracks: Track): Int
+
+    @Query("DELETE FROM tracks")
+    fun deleteAll(): Int
+
+    @Query("SELECT COUNT(id) FROM tracks")
+    fun getRowCount(): Int
 
 }

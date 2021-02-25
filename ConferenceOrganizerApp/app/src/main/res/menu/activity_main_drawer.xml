@@ -11,14 +11,10 @@
         <item
             android:id="@+id/nav_planner"
             android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_conf" />
+        <item
+            android:id="@+id/nav_admin"
+            android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_planner" />
-        <item
-            android:id="@+id/nav_tracks"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_tracks" />
-        <item
-            android:id="@+id/nav_sessions"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_sessions" />
     </group>
 </menu>

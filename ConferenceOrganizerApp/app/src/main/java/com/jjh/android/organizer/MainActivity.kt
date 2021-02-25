@@ -13,6 +13,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.jjh.android.organizer.db.OrganizerRepository
+import com.jjh.android.organizer.db.OrganizerRepositoryManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Set up data
+        OrganizerRepositoryManager.repository = OrganizerRepository(application)
+        OrganizerRepositoryManager.setup(this)
+
+        // set up UI
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -35,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_planner, R.id.nav_tracks, R.id.nav_sessions), drawerLayout)
+            R.id.nav_home, R.id.nav_planner, R.id.nav_admin), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

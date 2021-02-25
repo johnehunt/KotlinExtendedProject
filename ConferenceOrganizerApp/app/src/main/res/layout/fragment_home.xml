@@ -11,18 +11,19 @@
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
         android:text="Conference Organizer App"
         android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:textSize="30sp" />
+        android:textColor="#673AB7"
+        android:textSize="24sp" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="4dp"
         android:background="?android:attr/listDivider" />
 
     <TextView
@@ -30,13 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EFEBEB"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
         android:text="@string/welcome_msg"
-        android:padding="10dp"
-        android:textSize="24sp" />
+        android:textAlignment="center"
+        android:textColor="#673AB7"
+        android:textSize="18sp" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="4dp"
         android:background="?android:attr/listDivider" />
 </LinearLayout>

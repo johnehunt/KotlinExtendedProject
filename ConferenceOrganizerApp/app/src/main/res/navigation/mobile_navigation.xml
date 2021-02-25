@@ -13,21 +13,15 @@
 
     <fragment
         android:id="@+id/nav_planner"
-        android:name="com.jjh.android.organizer.ui.planner.TrackFragment"
+        android:name="com.jjh.android.organizer.ui.conference.ConferenceFragment"
+        android:label="@string/menu_conf"
+        tools:layout="@layout/fragment_conference" />
+
+    <fragment
+        android:id="@+id/nav_admin"
+        android:name="com.jjh.android.organizer.ui.planner.PlannerFragment"
         android:label="@string/menu_planner"
         tools:layout="@layout/fragment_planner" />
-
-    <fragment
-        android:id="@+id/nav_tracks"
-        android:name="com.jjh.android.organizer.ui.tracks.TrackFragment"
-        android:label="@string/menu_tracks"
-        tools:layout="@layout/fragment_tracks" />
-
-    <fragment
-        android:id="@+id/nav_sessions"
-        android:name="com.jjh.android.organizer.ui.sessions.SessionFragment"
-        android:label="@string/menu_sessions"
-        tools:layout="@layout/fragment_sessions" />
 
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.jjh.android.organizer.ui.planner
+package com.jjh.android.organizer.ui.conference
 
 import android.content.Context
 import android.util.Log
@@ -11,30 +11,30 @@ import com.jjh.android.organizer.model.Session
  * Provide binding from the hero list to HeroViewHolders displayed
  * within a {@link RecyclerView}.
  */
-class SessionAdapter(val context: Context,
-                     private val sessions: List<Session>) : RecyclerView.Adapter<SessionViewHolder>() {
+class SessionRowAdapter(val context: Context,
+                        private val sessions: List<Session>) : RecyclerView.Adapter<SessionRowViewHolder>() {
 
     companion object {
-        private const val TAG = "SessionAdapter"
+        private const val TAG = "SessionRowAdapter"
     }
 
     /**
      * Called when RecyclerView needs a new {@link HeroViewHolder} to represent
      * a Hero.
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SessionViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SessionRowViewHolder {
         Log.d(TAG, "onCreateViewHolder()")
         val inflater = LayoutInflater.from(parent.context)
-        return SessionViewHolder(inflater, parent)
+        return SessionRowViewHolder(inflater, parent)
     }
 
     /**
      * Called by RecyclerView to display the HeroViewHolder at the specified position.
      */
-    override fun onBindViewHolder(holder: SessionViewHolder, position: Int) {
+    override fun onBindViewHolder(holderRow: SessionRowViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder($position)")
         sessions[position].run {
-            holder.bind(this)
+            holderRow.bind(this)
         }
     }
 
