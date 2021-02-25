@@ -12,10 +12,6 @@ class PlannerViewModel : ViewModel() {
         private const val TAG = "PlannerViewModel"
     }
 
-    init {
-        Log.d(TAG, "init{}")
-    }
-
     val sessions: MutableList<Session>
         get() = OrganizerRepositoryManager.plannedSessions
 

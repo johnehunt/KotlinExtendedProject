@@ -35,7 +35,7 @@ object OrganizerRepositoryManager{
             }
     }
 
-    fun refresh(): Observable<List<TrackWithSessions>> {
+    private fun refresh(): Observable<List<TrackWithSessions>> {
         Log.d(TAG, "refresh()")
         return repository!!.findAllTracksWithSessions()
             .observeOn(DefaultSchedulerProvider.ui())

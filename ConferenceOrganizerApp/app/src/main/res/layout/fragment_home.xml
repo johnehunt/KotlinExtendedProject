@@ -15,7 +15,7 @@
         android:paddingTop="16dp"
         android:paddingRight="16dp"
         android:paddingBottom="16dp"
-        android:text="Conference Organizer App"
+        android:text="@string/conference_organizer_app"
         android:textAlignment="center"
         android:textColor="#673AB7"
         android:textSize="24sp" />

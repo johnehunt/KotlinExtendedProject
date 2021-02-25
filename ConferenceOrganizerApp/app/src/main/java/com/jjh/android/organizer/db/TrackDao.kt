@@ -1,9 +1,7 @@
 package com.jjh.android.organizer.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.jjh.android.organizer.model.Track
-
 
 @Dao
 interface TrackDao {

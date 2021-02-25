@@ -12,5 +12,12 @@
     <string name="menu_planner">Planner</string>
 
     <string name="welcome_msg">Welcome to the conference organizer application. This app allows tracks and sessions to be created and the resulting plan viewed.</string>
+    <string name="conference_organizer_app">Conference Organizer App</string>
+    <string name="please_enter_the_session_id">Please Enter the Session ID</string>
+    <string name="session_id">Session ID</string>
+    <string name="_1">1</string>
+    <string name="to">to</string>
+    <string name="session">Session</string>
+    <string name="presented_by">Presented by</string>
 
 </resources>
