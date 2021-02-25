@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.jjh.android.organizer.R
 import com.jjh.android.organizer.db.DefaultSchedulerProvider
-import com.jjh.android.organizer.db.OrganizerRepository
 
 import kotlinx.android.synthetic.main.fragment_planner.*
 
@@ -20,12 +19,7 @@ class PlannerFragment : Fragment() {
         private const val TAG = "PlannerFragment"
     }
 
-    private val selectionViewModel by viewModels<PlannerViewModel>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        selectionViewModel.repository = OrganizerRepository(requireActivity().application)
-    }
+    private val plannerViewModel by viewModels<PlannerViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,38 +33,45 @@ class PlannerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated()")
         super.onViewCreated(view, savedInstanceState)
+        setupAdapter()
 
         addSessionButton.setOnClickListener {
             Log.d(TAG, "on click listener for addSessionButton")
-            SessionInputDialog(activity, object : SessionInputDialog.SessionIdDialogListener {
-                override fun onOK(sessionId: Int) {
-                    Log.d(TAG, "The user tapped OK, input is $sessionId")
-                    selectionViewModel
-                        .addSession(sessionId)
-                        .observeOn(DefaultSchedulerProvider.ui())
-                        .subscribe{
-                            val list = selectionViewModel.sessions.map{
-                                "Session${it.id} ${it.title} by ${it.presenter} " +
-                                        "track${it.trackId} ${it.startTime} to ${it.endTime}"
-                            }.toList()
-                            val arrayAdapter: ArrayAdapter<String> =
-                                ArrayAdapter<String>(
-                                    requireContext(),
-                                    R.layout.selection_listview_layout,
-                                    R.id.selectedSessionTextView,
-                                    list)
-                            // Update the list view with friends
-                            listView.adapter = arrayAdapter
-                        }
-                }
-
-                override fun onCancel() {
-                    Log.d(TAG, "The user tapped Cancel")
-                }
-            }).show()
+            addSession()
         }
+    }
 
+    private fun addSession() {
+        SessionInputDialog(activity, object : SessionInputDialog.SessionIdDialogListener {
+            override fun onOK(sessionId: Int) {
+                Log.d(TAG, "The user tapped OK, input is $sessionId")
+                plannerViewModel
+                    .addSession(sessionId)
+                    .observeOn(DefaultSchedulerProvider.ui())
+                    .subscribe{
+                        setupAdapter()
+                    }
+            }
 
+            override fun onCancel() {
+                Log.d(TAG, "The user tapped Cancel")
+            }
+        }).show()
+    }
+
+    private fun setupAdapter() {
+        val list = plannerViewModel.sessions.map{
+            "Session${it.id} ${it.title} by ${it.presenter} " +
+                    "track${it.trackId} ${it.startTime} to ${it.endTime}"
+        }.toList()
+        val arrayAdapter: ArrayAdapter<String> =
+            ArrayAdapter<String>(
+                requireContext(),
+                R.layout.selection_listview_layout,
+                R.id.selectedSessionTextView,
+                list)
+        // Update the list view with sessions
+        listView.adapter = arrayAdapter
     }
 
 }

@@ -17,6 +17,8 @@ object OrganizerRepositoryManager{
 
     val tracksWithSessions: MutableList<TrackWithSessions> = mutableListOf()
 
+    val plannedSessions: MutableList<Session> = mutableListOf()
+
     fun setup(activity: MainActivity) {
         Log.d(TAG, "setup()")
         repository.getTrackRowCount()

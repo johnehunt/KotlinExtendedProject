@@ -34,12 +34,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/conferenceViewPager"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/conferenceViewPager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/conferenceViewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior" >-->
+<!--    </androidx.viewpager.widget.ViewPager>-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

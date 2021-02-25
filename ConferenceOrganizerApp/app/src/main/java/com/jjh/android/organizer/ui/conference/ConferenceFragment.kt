@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.tabs.TabLayoutMediator
 import com.jjh.android.organizer.R
 
 import kotlinx.android.synthetic.main.fragment_conference.*
@@ -30,8 +31,13 @@ class ConferenceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated")
-        conferenceViewPager.adapter = TrackTabPagerAdapter(viewModel, parentFragmentManager)
-        tabLayout.setupWithViewPager(conferenceViewPager)
+        conferenceViewPager2.adapter = TrackTabPagerAdapter(viewModel, this)
+
+        TabLayoutMediator(tabLayout, conferenceViewPager2,
+            TabLayoutMediator.TabConfigurationStrategy {
+                    tab, position -> tab.text = "${viewModel.getTrackName(position)} - ${viewModel.getTrackRoom(position)}"
+            }).attach()
+
     }
 
 }
