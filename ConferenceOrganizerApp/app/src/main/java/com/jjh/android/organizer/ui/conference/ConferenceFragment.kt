@@ -8,36 +8,39 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
-import com.jjh.android.organizer.R
+import com.jjh.android.organizer.databinding.FragmentConferenceBinding
 
-import kotlinx.android.synthetic.main.fragment_conference.*
 
 class ConferenceFragment : Fragment() {
 
-    companion object {
-        private const val TAG = "ConferenceFragment"
-    }
+  companion object {
+    private const val TAG = "ConferenceFragment"
+  }
 
-    private val viewModel by viewModels<ConferenceViewModel>()
+  private var _binding: FragmentConferenceBinding? = null
+  private val binding get() = _binding!!
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?): View? {
-        Log.d(TAG, "onCreateView")
-        return inflater.inflate(R.layout.fragment_conference, container, false)
-    }
+  private val viewModel by viewModels<ConferenceViewModel>()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        Log.d(TAG, "onViewCreated")
-        conferenceViewPager2.adapter = TrackTabPagerAdapter(viewModel, this)
+  override fun onCreateView(inflater: LayoutInflater,
+                            container: ViewGroup?,
+                            savedInstanceState: Bundle?): View? {
+    Log.d(TAG, "onCreateView")
+    _binding = FragmentConferenceBinding.inflate(inflater, container, false)
+    return binding.root
+  }
 
-        TabLayoutMediator(tabLayout, conferenceViewPager2,
-            TabLayoutMediator.TabConfigurationStrategy {
-                    tab, position -> tab.text = "${viewModel.getTrackName(position)} - ${viewModel.getTrackRoom(position)}"
-            }).attach()
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    Log.d(TAG, "onViewCreated")
+    binding.conferenceViewPager2.adapter = TrackTabPagerAdapter(viewModel, this)
 
-    }
+    val mediator = TabLayoutMediator(binding.tabLayout, binding.conferenceViewPager2)
+      { tab, position ->
+        tab.text = "${viewModel.getTrackName(position)} - ${viewModel.getTrackRoom(position)}"
+      }
+    mediator.attach()
+
+  }
 
 }

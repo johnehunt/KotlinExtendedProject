@@ -1,4 +1,4 @@
-package com.jjh.android.organizer
+package com.jjh.organizer
 
 import org.junit.Test
 
